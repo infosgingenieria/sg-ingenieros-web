@@ -16,21 +16,21 @@ export const metadata: Metadata = {
   title: "S&G INGENIEROS, TECNOLOGÍA Y AUTOMATIZACIÓN",
   description:
     "Diseño y fabricación de soluciones de automatización ganadera: pesaje, clasificación y alimentación individualizada (RFID, PLC, HMI).",
+
+  // ✅ AÑADIR ESTO
   verification: {
-    google: "weFiEMdZGtGp3vN7MSwlJJpjkOJrQ1EfhBWYEUnwjc0",
+    google: "CAiDbEGRXYA7GGR_CVKY6Ilgt8pMCNX7K3-hhJKA9eA",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
