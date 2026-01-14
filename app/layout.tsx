@@ -12,10 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "S&G INGENIEROS, TECNOLOGÍA Y AUTOMATIZACIÓN",
   description:
     "Diseño y fabricación de soluciones de automatización ganadera: pesaje, clasificación y alimentación individualizada (RFID, PLC, HMI).",
+  verification: {
+    google: "weFiEMdZGtGp3vN7MSwlJJpjkOJrQ1EfhBWYEUnwjc0",
+  },
 };
 
 export default function RootLayout({
