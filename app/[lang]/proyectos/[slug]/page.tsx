@@ -33,6 +33,20 @@ export default async function ProjectDetailPage({
           }}
         />
       </div>
+      <div style={{ marginTop: 32 }}>
+        <video
+          src="/videos/encamadora.mp4"
+          controls
+          preload="metadata"
+          style={{
+          width: "100%",
+          maxWidth: 900,
+          borderRadius: 8,
+        }}
+      >
+        Tu navegador no soporta vídeo HTML5.
+      </video>
+    </div>
     </main>
   );
 }
