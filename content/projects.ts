@@ -38,5 +38,18 @@ export const projects: Project[] = [
     tags: ["Pesaje", "IoT"],
     coverImage: "/images/proyecto-2.jpg",
   },
+  {
+    slug: "encamadora",
+    title: {
+      es: "Encamadora S&G – Carga y tritura paquetes de hasta 120×90",
+      en: "S&G Bedding Machine – Straw Bale Loading and Shredding",
+    },
+    summary: {
+      es: "Máquina encamadora para engancharse a la pala del tractor. Permite cargar y triturar paquetes de paja de hasta 120×90 cm para una distribución homogénea de la cama.",
+      en: "Bedding machine designed to attach to a tractor loader. Loads and shreds straw bales up to 120×90 cm for uniform bedding distribution.",
+    },
+    tags: ["Encamado", "Paja", "Tractor"],
+    coverImage: "/images/encamadora.jpg",
+},
   // Añade aquí más objetos con tus proyectos reales…
 ];
