@@ -33,11 +33,10 @@ export default async function ProjectDetailPage({
           }}
         />
       </div>
-
-      {project.slug === "encamadora" && (
+      {project.slug === "clasificadora-multiples-salidas" && (
         <div style={{ marginTop: 32 }}>
           <video
-            src="/videos/encamadora.mp4"
+            src="/videos/clasificadora-ganado-multiples-salidas.mp4"
             controls
             preload="metadata"
             style={{ width: "100%", maxWidth: 900, borderRadius: 8 }}
@@ -46,10 +45,10 @@ export default async function ProjectDetailPage({
           </video>
         </div>
       )}
-      {project.slug === "clasificadora-multiples-salidas" && (
+      {project.slug === "encamadora" && (
         <div style={{ marginTop: 32 }}>
           <video
-            src="/videos/clasificadora-ganado-multiples-salidas.mp4"
+            src="/videos/encamadora.mp4"
             controls
             preload="metadata"
             style={{ width: "100%", maxWidth: 900, borderRadius: 8 }}
