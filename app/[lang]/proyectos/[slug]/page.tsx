@@ -46,6 +46,18 @@ export default async function ProjectDetailPage({
           </video>
         </div>
       )}
+      {project.slug === "clasificadora-multiples-salidas" && (
+        <div style={{ marginTop: 32 }}>
+          <video
+            src="/videos/clasificadora-ganado-multiples-salidas.mp4"
+            controls
+            preload="metadata"
+            style={{ width: "100%", maxWidth: 900, borderRadius: 8 }}
+          >
+            Tu navegador no soporta vídeo HTML5.
+          </video>
+        </div>
+      )}
     </main>
   );
 }
