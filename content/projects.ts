@@ -12,17 +12,17 @@ export type Project = {
 // Lista de proyectos. Puedes añadir tantos como quieras.
 export const projects: Project[] = [
   {
-    slug: "clasificadora-corderos-multiples-salidas",
+    slug: "clasificadora-multiples-salidas",
     title: {
-      es: "Clasificadora de corderos múltiples salidas",
-      en: "Lamb sorter – multiple exits",
+      es: "Clasificadora de corderos u otro tipo de ganado con múltiples salidas",
+      en: "Multi-exit sorter for lambs and other livestock",
     },
     summary: {
-      es: "Clasificación por peso con puertas neumáticas y registro de datos.",
-      en: "Weight-based sorting with pneumatic gates and data logging.",
+      es: "Clasificación por peso y RFID (crotal, bolo, inyectable electrónico) con puertas neumáticas y registro de datos.",
+      en: "Weight-based and RFID identification sorting (ear tag, bolus, injectable electronic tag) with pneumatic gates and data logging.",
     },
-    tags: ["Pesaje", "Automatización", "Neumática"],
-    coverImage: "/images/proyecto-1.jpg",
+  tags: ["Pesaje", "RFID", "Automatización", "Neumática"],
+  coverImage: "/images/proyecto-1.jpg",
   },
   // Ejemplo adicional:
   {
