@@ -24,19 +24,18 @@ export const projects: Project[] = [
   tags: ["Pesaje", "RFID", "Automatización", "Neumática"],
   coverImage: "/images/proyecto-1.jpg",
   },
-  // Ejemplo adicional:
   {
     slug: "bascula-digital-ganado",
     title: {
       es: "Báscula digital para ganado",
-      en: "Digital scale for livestock",
+      en: "Digital livestock scale",
     },
     summary: {
-      es: "Báscula de precisión con transmisión de datos en tiempo real.",
-      en: "Precision scale with real-time data transmission.",
+      es: "Báscula de precisión con estructura robusta y transmisión de datos.",
+      en: "Precision livestock scale with robust structure and data transmission.",
     },
-    tags: ["Pesaje", "IoT"],
-    coverImage: "/images/proyecto-2.jpg",
+    tags: ["Pesaje", "Ganado", "Automatización"],
+    coverImage: "/images/bascula-digital-ganado.jpg",
   },
   {
     slug: "encamadora",
