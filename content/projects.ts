@@ -22,7 +22,7 @@ export const projects: Project[] = [
       en: "Weight-based and RFID identification sorting (ear tag, bolus, injectable electronic tag) with pneumatic gates and data logging.",
     },
   tags: ["Pesaje", "RFID", "Automatización", "Neumática"],
-  coverImage: "/images/proyecto-1.jpg",
+  coverImage: "/images/clasificadora-ganado-multiples-salidas.jpg",
   },
   {
     slug: "bascula-digital-ganado",
