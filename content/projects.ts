@@ -12,17 +12,17 @@ export type Project = {
 // Lista de proyectos. Puedes añadir tantos como quieras.
 export const projects: Project[] = [
   {
-    slug: "clasificadora-corderos-6-salidas",
+    slug: "clasificadora-corderos-multiples-salidas",
     title: {
-      es: "Clasificadora de corderos 6 salidas",
-      en: "Lamb sorter – 6 exits",
+      es: "Clasificadora de corderos múltiples salidas",
+      en: "Lamb sorter – multiple exits",
     },
     summary: {
       es: "Clasificación por peso con puertas neumáticas y registro de datos.",
       en: "Weight-based sorting with pneumatic gates and data logging.",
     },
     tags: ["Pesaje", "Automatización", "Neumática"],
-    coverImage: "/images/proyecto-1.jpg", // asegúrate de tener esta imagen en public/images/
+    coverImage: "/images/proyecto-1.jpg",
   },
   // Ejemplo adicional:
   {
