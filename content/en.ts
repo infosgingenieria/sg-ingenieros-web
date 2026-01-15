@@ -26,7 +26,7 @@ export const en = {
       id: "sorting",
       title: "Automatic sorting",
       description:
-        "Weight-based sorters with gates and pneumatic/electric automation.",
+        "Weight and RFID sorting systems with automated pneumatic/electric gates.",
     },
     {
       id: "feeding",

@@ -26,7 +26,7 @@ export const es = {
       id: "clasificacion",
       title: "Clasificación automática",
       description:
-        "Clasificadoras por peso con compuertas y automatización neumática/eléctrica.",
+        "Clasificadoras por peso y RFID con compuertas, automatización neumática/eléctrica.",
     },
     {
       id: "alimentacion",
