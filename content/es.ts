@@ -20,7 +20,7 @@ export const es = {
       id: "pesaje",
       title: "Sistemas de pesaje",
       description:
-        "Básculas, plataformas y sistemas de registro de peso para ovino, caprino y vacuno.",
+        "Básculas, plataformas y sistemas de registro de peso para cualquier tipo de ganado vivo.",
     },
     {
       id: "clasificacion",

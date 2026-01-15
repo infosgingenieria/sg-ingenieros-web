@@ -20,7 +20,7 @@ export const en = {
       id: "weighing",
       title: "Weighing systems",
       description:
-        "Scales, platforms and weight logging for sheep, goats and cattle.",
+        "Scales, platforms and weight data-logging systems for any type of live livestock.",
     },
     {
       id: "sorting",
