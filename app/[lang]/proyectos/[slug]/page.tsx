@@ -36,7 +36,7 @@ export default async function ProjectDetailPage({
       {project.slug === "clasificadora-multiples-salidas" && (
         <div style={{ marginTop: 32 }}>
           <video
-            src="/videos/clasificadora-ganado-multiples-salidas.mp4"
+            src="/videos/clasificadora.mp4"
             controls
             preload="metadata"
             style={{ width: "100%", maxWidth: 900, borderRadius: 8 }}
