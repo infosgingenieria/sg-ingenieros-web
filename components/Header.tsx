@@ -53,11 +53,9 @@ export default function Header({ lang }: { lang: "es" | "en" }) {
           maxWidth: 1200,
           margin: "0 auto",
           padding: "10px 16px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-          flexWrap: "nowrap",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: 10,
         }}
       >
         {/* Marca */}
