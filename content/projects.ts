@@ -25,17 +25,17 @@ export const projects: Project[] = [
   coverImage: "/images/clasificadora-ganado-multiples-salidas.jpg",
   },
   {
-    slug: "bascula-digital-ganado",
+    slug: "estaciones-alimentacion-individual-vacuno",
     title: {
-      es: "Báscula digital para ganado",
-      en: "Digital livestock scale",
+      es: "Estaciones de alimentación individual para vacuno",
+      en: "Individual feeding stations for cattle",
     },
     summary: {
-      es: "Báscula de precisión con estructura robusta y transmisión de datos.",
-      en: "Precision livestock scale with robust structure and data transmission.",
+      es: "Dosificación individualizada e identificación por RFID (crotal o collar electrónico) con registro de consumo, peso del animal y control de acceso.",
+      en: "Individualized feeding with RFID identification (ear tag or electronic collar), including feed intake tracking, animal weight recording, and access control.",
     },
-    tags: ["Pesaje", "Ganado", "Automatización"],
-    coverImage: "/images/bascula-digital-ganado.jpg",
+    tags: ["Alimentación", "Dosificación", "RFID", "Automatización"],
+    coverImage: "/images/estaciones-vacuno.jpg",
   },
   {
     slug: "encamadora",
@@ -49,18 +49,19 @@ export const projects: Project[] = [
     },
     tags: ["Encamado", "Paja", "Tractor"],
     coverImage: "/images/encamadora.jpg",
-},
+  },
   {
-    slug: "estaciones-alimentacion-individual-vacuno",
+    slug: "bascula-digital-ganado",
     title: {
-      es: "Estaciones de alimentación individual para vacuno",
-      en: "Individual feeding stations for cattle",
+      es: "Báscula digital para ganado",
+      en: "Digital livestock scale",
     },
     summary: {
-      es: "Dosificación individualizada e identificación por RFID (crotal o collar electrónico) con registro de consumo, peso del animal y control de acceso.",
-      en: "Individualized feeding with RFID identification (ear tag or electronic collar), including feed intake tracking, animal weight recording, and access control.",
+      es: "Báscula de precisión con estructura robusta y transmisión de datos.",
+      en: "Precision livestock scale with robust structure and data transmission.",
     },
-    tags: ["Alimentación", "Dosificación", "RFID", "Automatización"],
-    coverImage: "/images/estaciones-vacuno.jpg",
+    tags: ["Pesaje", "Ganado", "Automatización"],
+    coverImage: "/images/bascula-digital-ganado.jpg",
   },
+
 ];
