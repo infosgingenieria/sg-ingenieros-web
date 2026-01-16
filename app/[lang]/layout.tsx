@@ -17,6 +17,8 @@ export default async function LangLayout({
     <>
       <SetHtmlLang lang={locale} />
       <Header lang={locale} />
+      <Header lang={lang} />
+      <div style={{ height: 84 }} />
       <CTAWhatsApp lang={locale} />
 
       {children}

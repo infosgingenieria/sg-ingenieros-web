@@ -44,7 +44,7 @@ export default function Header({ lang }: { lang: "es" | "en" }) {
         zIndex: 50,
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
-        background: "rgba(255,255,255,0.85)",
+        background: "rgba(255,255,255,0.92)",
         borderBottom: "1px solid rgba(0,0,0,0.08)",
       }}
     >
@@ -68,7 +68,8 @@ export default function Header({ lang }: { lang: "es" | "en" }) {
             display: "flex",
             alignItems: "center",
             gap: 10,
-            minWidth: 260,
+            minWidth: 0,
+            maxWidth: "100%",
           }}
         >
           <img
