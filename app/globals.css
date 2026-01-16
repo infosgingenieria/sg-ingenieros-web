@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root{
-  --header-h: 340px;
+  --header-h: 88px;
 }
 
 @theme inline {
@@ -11,9 +11,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (max-width: 640px){
+@media (max-width: 768px){
   :root{
-    --header-h: 140px; /* aprox. porque en móvil se parte en dos filas */
+    --header-h: 150px; /* aprox. porque en móvil se parte en dos filas */
   }
 }
 

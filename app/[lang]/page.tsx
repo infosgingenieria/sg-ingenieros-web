@@ -15,7 +15,7 @@ export default async function Home({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       {/* HERO */}
-      <section className="relative overflow-hidden rounded-3xl border bg-white p-8 md:p-12">
+      <section className="relative mt-6 overflow-hidden rounded-3xl border bg-white p-8 md:p-12">
         <div className="absolute inset-0 opacity-[0.06] [background:radial-gradient(circle_at_20%_20%,#000_0,transparent_45%),radial-gradient(circle_at_80%_10%,#000_0,transparent_45%),radial-gradient(circle_at_50%_90%,#000_0,transparent_50%)]" />
         <div className="relative">
           <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold opacity-80">
