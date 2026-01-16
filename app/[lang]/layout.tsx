@@ -8,9 +8,10 @@ export default async function LangLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const locale = params.lang?.toLowerCase() === "en" ? "en" : "es";
+  const { lang } = await params;
+  const locale: "es" | "en" = lang?.toLowerCase() === "en" ? "en" : "es";
 
   return (
     <>
