@@ -3,19 +3,22 @@ import Footer from "@/components/Footer";
 import SetHtmlLang from "@/components/SetHtmlLang";
 import CTAWhatsApp from "@/components/CTAWhatsApp";
 
-export default function LangLayout({
+export default async function LangLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const locale = params.lang?.toLowerCase() === "en" ? "en" : "es";
+  const { lang } = await params;
+  const locale = lang?.toLowerCase() === "en" ? "en" : "es";
 
   return (
     <>
       <SetHtmlLang lang={locale} />
       <Header lang={locale} />
+
+      {/* separador para el header sticky */}
       <div style={{ height: 84 }} />
 
       <CTAWhatsApp lang={locale} />
