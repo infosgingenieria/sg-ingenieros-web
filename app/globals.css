@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --header-h: 88px;
 }
 
 @theme inline {
@@ -12,11 +11,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (max-width: 640px){
+  :root{
+    --header-h: 140px; /* aprox. porque en móvil se parte en dos filas */
   }
+}
+
+.page-offset{
+  padding-top: var(--header-h);
 }
 
 body {

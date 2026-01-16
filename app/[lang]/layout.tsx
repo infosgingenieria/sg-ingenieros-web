@@ -16,10 +16,12 @@ export default async function LangLayout({
   return (
     <>
       <SetHtmlLang lang={locale} />
-      <Header lang={locale} />
+      <Header lang={lang} />
       <CTAWhatsApp lang={locale} />
 
-      {children}
+      <div className="page-offset">
+        {children}
+      </div>
 
       <Footer lang={locale} />
     </>
