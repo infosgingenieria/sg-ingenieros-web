@@ -57,7 +57,7 @@ export default function Header({ lang }: { lang: "es" | "en" }) {
           alignItems: "center",
           justifyContent: "space-between",
           gap: 16,
-          flexWrap: "wrap",
+          flexWrap: "nowrap",
         }}
       >
         {/* Marca */}
@@ -103,7 +103,9 @@ export default function Header({ lang }: { lang: "es" | "en" }) {
             display: "flex",
             alignItems: "center",
             gap: 14,
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
+            overflowX: "auto",
+            whiteSpace: "nowrap",
           }}
         >
           <NavLink
