@@ -34,5 +34,10 @@ export const es = {
       description:
         "Dosificación inteligente con RFID e integración PLC/HMI para raciones personalizadas.",
     },
+    {
+      id: "maquinaria-a-medida",
+      title: "Maquinaria ganadera y agrícola a medida",
+      description: "Diseño y fabricación de maquinaria personalizada para ganadería y agricultura, adaptada a tu explotación y necesidades.",
+    },
   ],
 };

@@ -34,5 +34,10 @@ export const en = {
       description:
         "Smart dosing with RFID and PLC/HMI integration for personalized rations.",
     },
+    {
+      id: "custom-machinery",
+      title: "Custom livestock & agricultural machinery",
+      description: "Design and manufacturing of custom machinery for livestock and agriculture, tailored to your farm and requirements.",
+    },
   ],
 };

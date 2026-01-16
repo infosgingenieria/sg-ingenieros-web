@@ -50,5 +50,17 @@ export const projects: Project[] = [
     tags: ["Encamado", "Paja", "Tractor"],
     coverImage: "/images/encamadora.jpg",
 },
-  // Añade aquí más objetos con tus proyectos reales…
+  {
+    slug: "estaciones-alimentacion-individual-vacuno",
+    title: {
+      es: "Estaciones de alimentación individual para vacuno",
+      en: "Individual feeding stations for cattle",
+    },
+    summary: {
+      es: "Dosificación individualizada e identificación por RFID (crotal o collar electrónico) con registro de consumo, peso del animal y control de acceso.",
+      en: "Individualized feeding with RFID identification (ear tag or electronic collar), including feed intake tracking, animal weight recording, and access control.",
+    },
+    tags: ["Alimentación", "Dosificación", "RFID", "Automatización"],
+    coverImage: "/images/estaciones-vacuno.jpg",
+  },
 ];
