@@ -17,10 +17,6 @@ export default async function LangLayout({
     <>
       <SetHtmlLang lang={locale} />
       <Header lang={locale} />
-
-      {/* separador para el header sticky */}
-      <div style={{ height: 84 }} />
-
       <CTAWhatsApp lang={locale} />
 
       {children}
