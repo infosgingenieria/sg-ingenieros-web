@@ -13,7 +13,7 @@
 
 @media (max-width: 640px){
   :root{
-    --header-h: 160px; /* aprox. porque en móvil se parte en dos filas */
+    --header-h: 200px; /* aprox. porque en móvil se parte en dos filas */
   }
 }
 
