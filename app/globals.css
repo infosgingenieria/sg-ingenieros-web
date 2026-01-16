@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root{
-  --header-h: 140px;
+  --header-h: 340px;
 }
 
 @theme inline {
