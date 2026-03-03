@@ -20,7 +20,7 @@ export default function ProjectsPageEn() {
             }}
           >
             <div style={{ fontWeight: 800 }}>{p.title.en}</div>
-            <div style={{ marginTop: 8, opacity: 0.85 }}>{p.summary?.en ?? p.description?.en ?? ""}</div>
+            <div style={{ marginTop: 8, opacity: 0.85 }}>{p.summary?.en ?? ""}</div>
           </Link>
         ))}
       </div>
