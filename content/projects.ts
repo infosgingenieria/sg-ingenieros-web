@@ -90,6 +90,5 @@ export function normalizeSlug(input: string) {
 }
 
 export function getProjectBySlug(slug: string) {
-  const target = normalizeSlug(decodeURIComponent(slug || ""));
-  return projects.find((p) => normalizeSlug(p.slug) === target);
+  return projects.find((p) => p.slug === slug);
 }
