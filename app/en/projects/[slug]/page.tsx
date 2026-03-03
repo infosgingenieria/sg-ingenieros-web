@@ -1,10 +1,8 @@
-// app/en/projects/[slug]/page.tsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/content/projects";
 
 export const dynamic = "force-dynamic";
-
 
 export default function ProjectEnPage({ params }: { params: { slug: string } }) {
   const p = getProjectBySlug(params.slug);
@@ -12,50 +10,33 @@ export default function ProjectEnPage({ params }: { params: { slug: string } }) 
 
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px" }}>
-      <nav style={{ marginBottom: 18, display: "flex", gap: 12, flexWrap: "wrap" }}>
+      <nav style={{ marginBottom: 18 }}>
         <Link href="/en/projects" style={{ textDecoration: "underline" }}>
           ← Back to Projects
         </Link>
       </nav>
 
-      <header>
-        <h1 style={{ fontSize: 34, fontWeight: 900, lineHeight: 1.15 }}>{p.title.en}</h1>
+      <h1 style={{ fontSize: 34, fontWeight: 900, lineHeight: 1.15 }}>
+        {p.title.en}
+      </h1>
 
-        {p.description?.en ? (
-          <p style={{ marginTop: 10, fontSize: 16, opacity: 0.8, lineHeight: 1.6 }}>
-            {p.description.en}
-          </p>
-        ) : null}
-
-        <div style={{ marginTop: 14, display: "flex", gap: 10, flexWrap: "wrap", fontSize: 13, opacity: 0.75 }}>
-          {p.year ? <span><strong>Year:</strong> {p.year}</span> : null}
-          {p.location ? <span><strong>Location:</strong> {p.location}</span> : null}
-        </div>
-      </header>
+      <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.6 }}>
+        {p.summary?.en ?? p.description?.en ?? ""}
+      </p>
 
       {p.coverImage ? (
-        <div style={{ marginTop: 18 }}>
-          <img
-            src={p.coverImage}
-            alt={p.title.en}
-            style={{ width: "100%", height: "auto", borderRadius: 18, border: "1px solid rgba(0,0,0,0.08)" }}
-          />
-        </div>
+        <img
+          src={p.coverImage}
+          alt={p.title.en}
+          style={{
+            marginTop: 18,
+            width: "100%",
+            height: "auto",
+            borderRadius: 18,
+            border: "1px solid rgba(0,0,0,0.08)",
+          }}
+        />
       ) : null}
-
-      {p.content?.en?.length ? (
-        <section style={{ marginTop: 22, lineHeight: 1.75 }}>
-          {p.content.en.map((block, idx) => (
-            <p key={idx} style={{ marginTop: 12 }}>
-              {block}
-            </p>
-          ))}
-        </section>
-      ) : (
-        <section style={{ marginTop: 22, opacity: 0.7 }}>
-          <p>We’re preparing the details for this project.</p>
-        </section>
-      )}
     </main>
   );
 }
