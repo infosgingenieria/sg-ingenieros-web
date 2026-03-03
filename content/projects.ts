@@ -90,6 +90,23 @@ export function normalizeSlug(input: string) {
 }
 
 export function getProjectBySlug(slug: string) {
-  const target = normalizeSlug(decodeURIComponent(slug || ""));
-  return projects.find((p) => normalizeSlug(p.slug) === target);
+  const raw = decodeURIComponent(slug || "").trim();
+  const target = normalizeSlug(raw);
+
+  // Intento 1: match normalizado
+  let found = projects.find((p) => normalizeSlug(p.slug) === target);
+  if (found) return found;
+
+  // Intento 2: match directo
+  found = projects.find((p) => (p.slug || "").trim() === raw);
+  if (found) return found;
+
+  // Intento 3: por si el slug viene con / al final
+  const rawNoSlash = raw.replace(/\/+$/, "");
+  const targetNoSlash = normalizeSlug(rawNoSlash);
+
+  return (
+    projects.find((p) => normalizeSlug(p.slug) === targetNoSlash) ??
+    projects.find((p) => (p.slug || "").trim() === rawNoSlash)
+  );
 }
