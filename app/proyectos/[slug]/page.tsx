@@ -1,20 +1,46 @@
+import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/content/projects";
 
 export const dynamic = "force-dynamic";
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const p = getProjectBySlug(params.slug);
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }> | { slug: string };
+}) {
+  const resolved =
+    typeof (params as any).then === "function"
+      ? await params
+      : params;
+
+  const slug = resolved?.slug;
+
+  if (!slug) {
+    return (
+      <pre style={{ padding: 24 }}>
+        ERROR: slug vacío
+      </pre>
+    );
+  }
+
+  const p = getProjectBySlug(slug);
+
+  if (!p) {
+    return (
+      <pre style={{ padding: 24 }}>
+        NO MATCH for slug: {slug}
+      </pre>
+    );
+  }
 
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 900 }}>DEBUG PROYECTO</h1>
-      <pre style={{ marginTop: 12, padding: 12, background: "#f5f5f5", borderRadius: 12, overflowX: "auto" }}>
-        slug: {params.slug}
-        {"\n"}
-        found: {p ? "YES" : "NO"}
-        {"\n"}
-        title.es: {p?.title?.es ?? ""}
-      </pre>
+      <h1 style={{ fontSize: 34, fontWeight: 900 }}>
+        {p.title.es}
+      </h1>
+      <p style={{ marginTop: 12 }}>
+        {p.summary?.es ?? ""}
+      </p>
     </main>
   );
 }
