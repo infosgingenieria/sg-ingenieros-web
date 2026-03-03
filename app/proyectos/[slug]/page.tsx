@@ -2,11 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, normalizeSlug, getProjectBySlug } from "@/content/projects";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: normalizeSlug(p.slug) }));
-}
+export const dynamic = "force-dynamic";
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const p = getProjectBySlug(params.slug);
