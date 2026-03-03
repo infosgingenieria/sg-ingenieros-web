@@ -3,21 +3,10 @@
 export type Project = {
   slug: string;
   title: { es: string; en: string };
-
-  // Texto corto para tarjetas
-  summary?: { es?: string; en?: string };
-
-  // Texto algo más largo (fallback)
-  description?: { es?: string; en?: string };
-
-  tags?: string[];
-  coverImage?: string; // Ruta dentro de /public
-
-  location?: string;
-  year?: string;
-
-  // Contenido largo opcional (detalle)
-  content?: { es?: string[]; en?: string[] };
+  summary: { es: string; en: string };
+  tags: string[];
+  coverImage: string;
+  video?: string; // (opcional)
 };
 
 // ✅ Proyectos (visual y textos)
@@ -34,6 +23,7 @@ export const projects: Project[] = [
     },
     tags: ["Pesaje", "RFID", "Automatización", "Neumática"],
     coverImage: "/images/clasificadora-ganado-multiples-salidas.jpg",
+    video: "/videos/clasificadora.mp4",
   },
   {
     slug: "estaciones-alimentacion-individual-vacuno",
@@ -60,6 +50,7 @@ export const projects: Project[] = [
     },
     tags: ["Encamado", "Paja", "Tractor"],
     coverImage: "/images/encamadora.jpg",
+    video: "/videos/encamadora.mp4",
   },
   {
     slug: "bascula-digital-ganado",
