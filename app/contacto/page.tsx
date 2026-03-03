@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { tES } from "@/content/es"; // si tu import es distinto, ajusta a tu proyecto
 
 export const metadata = {
   title: "Contacto | S&G Ingenieros",
