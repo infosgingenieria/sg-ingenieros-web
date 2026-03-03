@@ -3,44 +3,29 @@ import { getProjectBySlug } from "@/content/projects";
 
 export const dynamic = "force-dynamic";
 
+type Params = { slug: string };
+
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Params | Promise<Params>;
 }) {
-  const resolved =
-    typeof (params as any).then === "function"
-      ? await params
-      : params;
+  const resolved: Params =
+    typeof (params as any)?.then === "function"
+      ? await (params as Promise<Params>)
+      : (params as Params);
 
-  const slug = resolved?.slug;
+  const slug = resolved.slug;
 
-  if (!slug) {
-    return (
-      <pre style={{ padding: 24 }}>
-        ERROR: slug vacío
-      </pre>
-    );
-  }
+  if (!slug) return notFound();
 
   const p = getProjectBySlug(slug);
-
-  if (!p) {
-    return (
-      <pre style={{ padding: 24 }}>
-        NO MATCH for slug: {slug}
-      </pre>
-    );
-  }
+  if (!p) return notFound();
 
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px" }}>
-      <h1 style={{ fontSize: 34, fontWeight: 900 }}>
-        {p.title.es}
-      </h1>
-      <p style={{ marginTop: 12 }}>
-        {p.summary?.es ?? ""}
-      </p>
+      <h1 style={{ fontSize: 34, fontWeight: 900 }}>{p.title.es}</h1>
+      <p style={{ marginTop: 12 }}>{p.summary?.es ?? p.description?.es ?? ""}</p>
     </main>
   );
 }
