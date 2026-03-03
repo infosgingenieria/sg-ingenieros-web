@@ -1,0 +1,61 @@
+export const en = {
+  nav: {
+    services: "Services",
+    projects: "Projects",
+    about: "About S&G",
+    contact: "Contact",
+  },
+  hero: {
+    title: "Livestock automation and custom machinery",
+    subtitle:
+      "Design, manufacturing and integration of weighing, sorting and individualized feeding systems (RFID, PLC, HMI).",
+    cta: "Request a quote",
+  },
+  sections: {
+    servicesTitle: "What we do",
+    projectsTitle: "Featured projects",
+  },
+  services: [
+    {
+      id: "weighing",
+      title: "Weighing systems",
+      description:
+        "Scales, platforms and weight data-logging systems for any type of live livestock.",
+    },
+    {
+      id: "sorting",
+      title: "Automatic sorting",
+      description:
+        "Weight and RFID sorting systems with automated pneumatic/electric gates.",
+    },
+    {
+      id: "feeding",
+      title: "Individual feeding",
+      description:
+        "Smart dosing with RFID and PLC/HMI integration for personalized rations.",
+    },
+    {
+      id: "custom-machinery",
+      title: "Custom livestock & agricultural machinery",
+      description: "Design and manufacturing of custom machinery for livestock and agriculture, tailored to your farm and requirements.",
+    },
+  ],
+  contact: {
+    title: "Contact",
+    subtitle: "Tell us about your project and we’ll get back to you shortly.",
+    phoneLabel: "Phone / WhatsApp",
+    emailLabel: "Email",
+    formTitle: "Form",
+    name: "Name",
+    company: "Company",
+    phone: "Phone",
+    email: "Email",
+    message: "Message",
+    send: "Send",
+    success: "Message sent. We’ll reply soon.",
+    whatsappLabel: "WhatsApp",
+    whatsappUrl: "https://wa.me/34665983184?text=Hi%2C%20I%27d%20like%20information%20and%20a%20quote.",
+    whatsappText: "+34 665 983 184",
+  },
+
+};

@@ -1,0 +1,132 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import LangSwitch from "./LangSwitch";
+
+export default function Header() {
+  const pathname = (usePathname() || "/").toLowerCase();
+  const lang: "es" | "en" = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+
+  const routes = {
+    home: lang === "en" ? "/en" : "/",
+    services: lang === "en" ? "/en/services" : "/servicios",
+    projects: lang === "en" ? "/en/projects" : "/proyectos",
+    contact: lang === "en" ? "/en/contact" : "/contacto",
+  };
+
+  const isActive = (href: string) => {
+    const h = href.toLowerCase();
+    return pathname === h || pathname.startsWith(h + "/");
+  };
+
+  const NavLink = ({ href, label }: { href: string; label: string }) => {
+    const active = isActive(href);
+    return (
+      <Link
+        href={href}
+        style={{
+          textDecoration: "none",
+          fontWeight: 800,
+          opacity: active ? 1 : 0.75,
+          borderBottom: active ? "2px solid rgba(0,0,0,0.75)" : "2px solid transparent",
+          paddingBottom: 4,
+        }}
+      >
+        {label}
+      </Link>
+    );
+  };
+
+  return (
+    <header
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        background: "rgba(255,255,255,0.92)",
+        borderBottom: "1px solid rgba(0,0,0,0.08)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          padding: "10px 16px",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: 10,
+        }}
+      >
+        <Link
+          href={routes.home}
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            minWidth: 0,
+            maxWidth: "100%",
+          }}
+        >
+          <img
+            src="/logo.png"
+            alt="S&G"
+            width={40}
+            height={40}
+            style={{
+              display: "block",
+              borderRadius: 10,
+              border: "1px solid rgba(0,0,0,0.08)",
+              background: "white",
+              padding: 6,
+            }}
+          />
+
+          <span style={{ lineHeight: 1.05 }}>
+            <span style={{ fontWeight: 900, letterSpacing: 0.2 }}>S&amp;G INGENIEROS</span>
+            <br />
+            <span style={{ fontWeight: 600, fontSize: 13, opacity: 0.75 }}>
+              {lang === "es" ? "TECNOLOGÍA Y AUTOMATIZACIÓN" : "TECHNOLOGY & AUTOMATION"}
+            </span>
+          </span>
+        </Link>
+
+        <nav
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            flexWrap: "nowrap",
+            overflowX: "auto",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <NavLink href={routes.services} label={lang === "es" ? "Servicios" : "Services"} />
+          <NavLink href={routes.projects} label={lang === "es" ? "Proyectos" : "Projects"} />
+          <NavLink href={routes.contact} label={lang === "es" ? "Contacto" : "Contact"} />
+
+          <Link
+            href={routes.contact}
+            style={{
+              textDecoration: "none",
+              padding: "8px 12px",
+              borderRadius: 12,
+              border: "1px solid rgba(0,0,0,0.15)",
+              background: "rgba(0,0,0,0.92)",
+              color: "white",
+              fontWeight: 900,
+              marginLeft: 6,
+            }}
+          >
+            {lang === "es" ? "Pedir presupuesto" : "Request a quote"}
+          </Link>
+
+          <LangSwitch />
+        </nav>
+      </div>
+    </header>
+  );
+}
