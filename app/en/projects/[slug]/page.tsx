@@ -25,7 +25,7 @@ export default function ProjectEnPage({ params }: { params: { slug: string } }) 
       </h1>
 
       <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.6 }}>
-        {p.summary?.en ?? p.description?.en ?? ""}
+        {p.summary?.en ?? ""}
       </p>
 
       {p.coverImage ? (
