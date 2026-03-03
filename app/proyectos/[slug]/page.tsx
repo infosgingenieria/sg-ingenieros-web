@@ -12,7 +12,13 @@ export default async function ProjectPage(props: { params: Params }) {
   if (!slug) return notFound();
 
   const p = getProjectBySlug(slug);
-  if (!p) return notFound();
+  if (!p) {
+    return (
+      <pre style={{ padding: 24, whiteSpace: "pre-wrap" }}>
+        NOT FOUND. slug="{props.params.slug}"
+      </pre>
+    );
+  }
 
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px" }}>
