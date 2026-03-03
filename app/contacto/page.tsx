@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { metadataBase } from "@/lib/seo"; // si no tienes esto, borra esta línea
 import { tES } from "@/content/es"; // si tu import es distinto, ajusta a tu proyecto
 
 export const metadata = {
