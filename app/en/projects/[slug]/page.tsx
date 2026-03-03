@@ -1,11 +1,10 @@
 // app/en/projects/[slug]/page.tsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, projects, normalizeSlug } from "@/content/projects";
+import { getProjectBySlug } from "@/content/projects";
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: normalizeSlug(p.slug) }));
-}
+export const dynamic = "force-dynamic";
+
 
 export default function ProjectEnPage({ params }: { params: { slug: string } }) {
   const p = getProjectBySlug(params.slug);
