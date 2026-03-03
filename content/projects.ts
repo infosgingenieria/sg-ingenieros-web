@@ -83,12 +83,13 @@ export function normalizeSlug(input: string) {
     .trim()
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // quita tildes
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9\- ]/g, "")
     .replace(/\s+/g, "-")
     .replace(/\-+/g, "-");
 }
 
 export function getProjectBySlug(slug: string) {
-  return projects.find((p) => p.slug === slug);
+  const target = normalizeSlug(decodeURIComponent(slug || ""));
+  return projects.find((p) => normalizeSlug(p.slug) === target);
 }
