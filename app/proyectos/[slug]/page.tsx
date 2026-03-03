@@ -4,21 +4,14 @@ import { getProjectBySlug } from "@/content/projects";
 
 export const dynamic = "force-dynamic";
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: Promise<{ slug: string }> | { slug: string };
-}) {
-  // Compatibilidad total con Next 16
-  const resolvedParams =
-    typeof (params as any).then === "function" ? await params : params;
+type Params = { slug: string };
 
-  const slug = resolvedParams?.slug;
+export default async function ProjectPage(props: { params: Params }) {
+  const slug = props.params?.slug;
 
   if (!slug) return notFound();
 
   const p = getProjectBySlug(slug);
-
   if (!p) return notFound();
 
   return (
@@ -30,7 +23,7 @@ export default async function ProjectPage({
       </nav>
 
       <h1 style={{ fontSize: 34, fontWeight: 900, lineHeight: 1.15 }}>
-        {p.title?.es}
+        {p.title.es}
       </h1>
 
       <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.6 }}>
@@ -40,7 +33,7 @@ export default async function ProjectPage({
       {p.coverImage ? (
         <img
           src={p.coverImage}
-          alt={p.title?.es ?? ""}
+          alt={p.title.es}
           style={{
             marginTop: 18,
             width: "100%",
@@ -52,14 +45,7 @@ export default async function ProjectPage({
       ) : null}
 
       {p.tags?.length ? (
-        <div
-          style={{
-            marginTop: 14,
-            display: "flex",
-            gap: 8,
-            flexWrap: "wrap",
-          }}
-        >
+        <div style={{ marginTop: 14, display: "flex", gap: 8, flexWrap: "wrap" }}>
           {p.tags.map((tag) => (
             <span
               key={tag}
