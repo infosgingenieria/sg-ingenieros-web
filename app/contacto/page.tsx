@@ -21,8 +21,8 @@ export default function ContactoPage() {
         <div style={{ border: "1px solid #eee", borderRadius: 16, padding: 16 }}>
           <div style={{ fontWeight: 800 }}>{t.contact.emailLabel}</div>
           <div style={{ marginTop: 8 }}>
-            <a href={`mailto:${t.contact.email}`} style={{ textDecoration: "underline" }}>
-              {t.contact.email}
+            <a href="mailto:info.sgingenieria@gmail.com">
+              info.sgingenieria@gmail.com
             </a>
           </div>
         </div>

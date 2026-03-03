@@ -44,7 +44,7 @@ export const es = {
     title: "Contacto",
     subtitle: "Cuéntanos tu proyecto y te respondemos lo antes posible.",
     phoneLabel: "Teléfono / WhatsApp",
-    emailLabel: "Email",
+    emailLabel: "info.sgingenieria@gmail.com",
     formTitle: "Formulario",
     name: "Nombre",
     company: "Empresa",
