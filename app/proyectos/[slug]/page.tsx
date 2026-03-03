@@ -35,7 +35,7 @@ export default async function ProjectPage({
       </h1>
 
       <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.6 }}>
-        {p.summary?.es ?? p.description?.es ?? ""}
+        {p.summary?.es ?? ""}
       </p>
 
       {/* ✅ IMAGEN */}

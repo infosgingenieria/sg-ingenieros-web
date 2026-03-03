@@ -94,7 +94,7 @@ export default function Home() {
 
               <h3 className="mt-4 text-base font-extrabold">{p.title[locale]}</h3>
 
-              <p className="mt-2 text-sm leading-relaxed text-black/70">{p.summary?.[locale] ?? p.description?.[locale] ?? ""}</p>
+              <p className="mt-2 text-sm leading-relaxed text-black/70">{p.summary?.[locale] ?? ""}</p>
 
               <div className="mt-3 flex flex-wrap gap-2">
                 {(p.tags ?? []).slice(0, 3).map((tag) => (

@@ -20,7 +20,7 @@ export default function ProyectosPage() {
             }}
           >
             <div style={{ fontWeight: 800 }}>{p.title.es}</div>
-            <div style={{ marginTop: 8, opacity: 0.85 }}>{p.summary?.es ?? p.description?.es ?? ""}</div>
+            <div style={{ marginTop: 8, opacity: 0.85 }}>{p.summary?.es ?? ""}</div>
           </Link>
         ))}
       </div>
