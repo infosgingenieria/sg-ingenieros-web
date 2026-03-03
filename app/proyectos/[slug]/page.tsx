@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/content/projects";
 
@@ -16,7 +17,6 @@ export default async function ProjectPage({
       : (params as Params);
 
   const slug = resolved.slug;
-
   if (!slug) return notFound();
 
   const p = getProjectBySlug(slug);
@@ -24,8 +24,73 @@ export default async function ProjectPage({
 
   return (
     <main style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px" }}>
-      <h1 style={{ fontSize: 34, fontWeight: 900 }}>{p.title.es}</h1>
-      <p style={{ marginTop: 12 }}>{p.summary?.es ?? p.description?.es ?? ""}</p>
+      <nav style={{ marginBottom: 18 }}>
+        <Link href="/proyectos" style={{ textDecoration: "underline" }}>
+          ← Volver a Proyectos
+        </Link>
+      </nav>
+
+      <h1 style={{ fontSize: 34, fontWeight: 900, lineHeight: 1.15 }}>
+        {p.title.es}
+      </h1>
+
+      <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.6 }}>
+        {p.summary?.es ?? p.description?.es ?? ""}
+      </p>
+
+      {/* ✅ IMAGEN */}
+      {p.coverImage ? (
+        <img
+          src={p.coverImage}
+          alt={p.title.es}
+          loading="lazy"
+          style={{
+            marginTop: 18,
+            width: "100%",
+            height: "auto",
+            borderRadius: 18,
+            border: "1px solid rgba(0,0,0,0.08)",
+          }}
+        />
+      ) : null}
+
+      {/* ✅ VIDEO (si existe) */}
+      {"video" in p && p.video ? (
+        <div style={{ marginTop: 18 }}>
+          <video
+            src={p.video}
+            controls
+            playsInline
+            preload="metadata"
+            style={{
+              width: "100%",
+              borderRadius: 18,
+              border: "1px solid rgba(0,0,0,0.08)",
+            }}
+          />
+        </div>
+      ) : null}
+
+      {/* ✅ TAGS */}
+      {p.tags?.length ? (
+        <div style={{ marginTop: 14, display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {p.tags.map((tag) => (
+            <span
+              key={tag}
+              style={{
+                border: "1px solid rgba(0,0,0,0.15)",
+                borderRadius: 999,
+                padding: "4px 10px",
+                fontSize: 12,
+                fontWeight: 700,
+                opacity: 0.8,
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      ) : null}
     </main>
   );
 }

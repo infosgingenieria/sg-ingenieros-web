@@ -20,7 +20,7 @@ export type Project = {
   content?: { es?: string[]; en?: string[] };
 };
 
-// ✅ Proyectos (visual y textos del OLD)
+// ✅ Proyectos (visual y textos)
 export const projects: Project[] = [
   {
     slug: "clasificadora-multiples-salidas",
