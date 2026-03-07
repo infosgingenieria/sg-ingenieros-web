@@ -7,6 +7,11 @@ export type Project = {
   tags: string[];
   coverImage: string;
   video?: string; // (opcional)
+  content?: {
+      es: string[]
+      en: string[]
+  }
+  contentImages?: string[]
 };
 
 // ✅ Proyectos (visual y textos)
@@ -24,6 +29,43 @@ export const projects: Project[] = [
     tags: ["Pesaje", "RFID", "Automatización", "Neumática"],
     coverImage: "/images/clasificadora-ganado-multiples-salidas.jpg",
     video: "/videos/clasificadora.mp4",
+  },
+  {
+    slug: "bascula-inteligente-cebadero-terneros",
+    title: {
+      es: "Báscula inteligente para cebadero de terneros",
+      en: "Smart weighing system for calf feedlots",
+    },
+    summary: {
+    es: "Sistema de pesaje inteligente para cebaderos de terneros que permite realizar seguimiento automático del crecimiento mediante identificación RFID y generación de curvas de pesaje individuales.",
+    en: "Smart weighing system for calf feedlots that automatically tracks animal growth through RFID identification and individual weight curves.",
+    },
+    tags: ["Pesaje", "RFID", "Crecimiento", "Automatización"],
+    coverImage: "/images/bascula-inteligente-terneros.jpg",
+    content: {
+      es: [
+        "El sistema permite realizar pesajes automáticos cada vez que el animal acude libremente a comer o a beber agua, generando curvas de crecimiento individuales para cada animal identificado mediante crotal electrónico.",
+    
+        "Estas curvas permiten detectar cuándo el animal deja de ganar peso, ayudando al ganadero a determinar el momento óptimo de salida a venta o matadero.",
+    
+        "El sistema puede consultarse de forma remota, permitiendo visualizar la evolución de cada animal o lote desde ordenador o móvil.",
+    
+        "Opcionalmente el sistema puede incorporar una puerta selectora automática que permite clasificar animales según diferentes criterios de peso o estado productivo."
+      ],
+
+      en: [
+        "The system automatically records weight each time the animal freely goes to eat or drink water, generating individual growth curves for each animal identified through electronic ear tags.",
+    
+        "These growth curves help farmers detect when animals stop gaining weight and determine the optimal moment for sale or slaughter.",
+    
+        "The system can be accessed remotely, allowing farmers to monitor the evolution of each animal or group from a computer or mobile device.",
+    
+        "Optionally the system can include an automatic sorting gate to classify animals according to weight ranges or production status."
+      ]
+    },
+    contentImages: [
+    "/images/curva-crecimiento-terneros.jpg"
+    ]
   },
   {
     slug: "estaciones-alimentacion-individual-vacuno",
@@ -51,19 +93,6 @@ export const projects: Project[] = [
     tags: ["Encamado", "Paja", "Tractor"],
     coverImage: "/images/encamadora.jpg",
     video: "/videos/encamadora.mp4",
-  },
-  {
-    slug: "bascula-digital-ganado",
-    title: {
-      es: "Báscula digital para ganado",
-      en: "Digital livestock scale",
-    },
-    summary: {
-      es: "Báscula de precisión con estructura robusta y transmisión de datos.",
-      en: "Precision livestock scale with robust structure and data transmission.",
-    },
-    tags: ["Pesaje", "Ganado", "Automatización"],
-    coverImage: "/images/bascula-digital-ganado.jpg",
   },
 ];
 

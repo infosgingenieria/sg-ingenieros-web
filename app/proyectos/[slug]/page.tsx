@@ -71,6 +71,29 @@ export default async function ProjectPage({
         </div>
       ) : null}
 
+      {p.content?.es ? (
+        <div style={{ marginTop: 28, lineHeight: 1.7 }}>
+          {p.content.es.map((block, idx) => (
+            <p key={idx} style={{ marginTop: 14 }}>
+              {block}
+            </p>
+          ))}
+        </div>
+      ) : null}
+
+      {p.contentImages?.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={p.title.es}
+          style={{
+            marginTop: 30,
+            width: "100%",
+            borderRadius: 18
+          }}
+        />
+      ))}
+
       {/* ✅ TAGS */}
       {p.tags?.length ? (
         <div style={{ marginTop: 14, display: "flex", gap: 8, flexWrap: "wrap" }}>
